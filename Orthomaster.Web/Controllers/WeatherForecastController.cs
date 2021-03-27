@@ -1,11 +1,12 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using orthomaster;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace orthomaster.Controllers
+namespace Orthomaster.Web.Controllers
 {
     [ApiController]
     [Route("[controller]")]
