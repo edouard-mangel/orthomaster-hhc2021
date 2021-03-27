@@ -12,10 +12,6 @@ namespace test
                 .WithColumn("Id").AsInt64().PrimaryKey().Identity()
                 .WithColumn("Label").AsString();                   
 
-            Create.Table("ContreIndications")
-                .WithColumn("Id").AsInt64().PrimaryKey().Identity()
-                .WithColumn("Label").AsString();
-
             Create.Table("Morphologie")
                 .WithColumn("Id").AsInt64().PrimaryKey().Identity()
                 .WithColumn("Label").AsString();
@@ -49,11 +45,6 @@ namespace test
             Insert.IntoTable("Symptomatologie").WithIdentityInsert().Row(new { Id = 4, Label = "Raideur matinale" });
             Insert.IntoTable("Symptomatologie").WithIdentityInsert().Row(new { Id = 5, Label = "Grossesse" });
 
-            Insert.IntoTable("ContreIndications").WithIdentityInsert().Row(new { Id = 1, Label = "Insuffisance respiratoire" });
-            Insert.IntoTable("ContreIndications").WithIdentityInsert().Row(new { Id = 2, Label = "Hernie Hiatale" });
-            Insert.IntoTable("ContreIndications").WithIdentityInsert().Row(new { Id = 3, Label = "Hernie Inguinale" });
-            Insert.IntoTable("ContreIndications").WithIdentityInsert().Row(new { Id = 4, Label = "Prolapsus" });
-
             Insert.IntoTable("Morphologie").WithIdentityInsert().Row(new { Id = 1, Label = "Poitrine généreuse" });
             Insert.IntoTable("Morphologie").WithIdentityInsert().Row(new { Id = 2, Label = "Taille de guêpe" });
             Insert.IntoTable("Morphologie").WithIdentityInsert().Row(new { Id = 3, Label = "Ventre bedonnant" });
@@ -61,7 +52,6 @@ namespace test
             Insert.IntoTable("Morphologie").WithIdentityInsert().Row(new { Id = 5, Label = "Hyperlordose" });
             Insert.IntoTable("Morphologie").WithIdentityInsert().Row(new { Id = 6, Label = "Délordose" });
             Insert.IntoTable("Morphologie").WithIdentityInsert().Row(new { Id = 7, Label = "Grosses cuisses" });
-
 
             Insert.IntoTable("Activite").WithIdentityInsert().Row(new { Id = 1, Label = "Sédentaire" });
             Insert.IntoTable("Activite").WithIdentityInsert().Row(new { Id = 2, Label = "Actif / tonique" });
