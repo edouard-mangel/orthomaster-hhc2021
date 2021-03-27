@@ -7,7 +7,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Orthomaster.Web", "Orthomas
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Database.FluentMigrator", "Database.FluentMigrator\Database.FluentMigrator.csproj", "{F254BE28-1DAB-4268-9D5B-42D0A6C467C3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure", "Infrastructure\Infrastructure.csproj", "{EA11B1D1-E2F7-4D71-A38B-A87B91BBE612}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Infrastructure", "Infrastructure\Infrastructure.csproj", "{EA11B1D1-E2F7-4D71-A38B-A87B91BBE612}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IntegrationTests", "IntegrationTests\IntegrationTests.csproj", "{5378CA7E-BDCB-45F0-8EC8-B668ABEC6C7A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{EA11B1D1-E2F7-4D71-A38B-A87B91BBE612}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EA11B1D1-E2F7-4D71-A38B-A87B91BBE612}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EA11B1D1-E2F7-4D71-A38B-A87B91BBE612}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5378CA7E-BDCB-45F0-8EC8-B668ABEC6C7A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5378CA7E-BDCB-45F0-8EC8-B668ABEC6C7A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5378CA7E-BDCB-45F0-8EC8-B668ABEC6C7A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5378CA7E-BDCB-45F0-8EC8-B668ABEC6C7A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
