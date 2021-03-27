@@ -1,0 +1,7 @@
+{
+  "profiles": {
+    "Database.FluentMigrator": {
+      "commandName": "Project"
+    }
+  }
+}

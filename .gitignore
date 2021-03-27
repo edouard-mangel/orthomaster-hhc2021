@@ -26,6 +26,7 @@ Obj/
 
 # Visual Studio 2015 cache/options directory
 .vs/
+.vs 
 
 # MSTest test Results
 [Tt]est[Rr]esult*/
@@ -500,3 +501,4 @@ testem.log
 # e2e
 /e2e/*.js
 /e2e/*.map
+.vs/orthomaster/v16/.suo
