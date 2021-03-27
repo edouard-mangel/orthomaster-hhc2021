@@ -11,7 +11,7 @@ namespace Database.FluentMigrator
                 .WithColumn("IdProduit").AsInt64()
                 .WithColumn("IdSymptomatologie").AsInt64();
 
-            Create.ForeignKey("fk_Symptomatologie-Produit_ SymptomatologieId_ Symptomatologie_Id")
+            Create.ForeignKey("fk_Symptomatologie-Produit_SymptomatologieId_Symptomatologie_Id")
                 .FromTable("Produit-Symptomatologie").ForeignColumn("IdSymptomatologie")
                 .ToTable("Symptomatologie").PrimaryColumn("Id");
 
