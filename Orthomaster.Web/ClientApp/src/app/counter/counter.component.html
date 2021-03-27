@@ -1,0 +1,17 @@
+<h1>Ceintures lombaires</h1>
+
+<p>Critères de choix : </p>
+
+<form>
+    <div class="form-group">
+        <label for="critere1">Hero critere1</label>
+        <select class="form-control" id="critere1" required>
+          <option *ngFor="let pow of criteresSedentarite" [value]="pow">{{pow}}</option>
+        </select>
+      </div>
+    <input class="btn btn-primary"  type="submit" title="Rechercher" value="Rechercher" />
+</form>
+
+<p aria-live="polite">Current count: <strong>{{ currentCount }}</strong></p>
+
+<button class="btn btn-primary" (click)="incrementCounter()">Increment</button>

@@ -1,0 +1,10 @@
+<p>Ceintures lombaires</p>
+
+<div class="form-groupng">
+    <label for="projets">Projet</label>
+    <select class="form-control" id="projets" required>
+      <option *ngFor="let proj of projets" [value]="proj">{{proj}}</option>
+    </select>
+  </div>
+
+  <button (click)="fetchData();" class="btn btn-primary">Rechercher</button>
