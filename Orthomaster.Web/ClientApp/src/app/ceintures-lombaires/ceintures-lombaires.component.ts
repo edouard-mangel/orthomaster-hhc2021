@@ -50,7 +50,7 @@ export class CeinturesLombairesComponent implements OnInit {
     }, error => console.error(error));
     this.defaultSearch.compteur++;
   }  
-  
+
   ngOnInit() {
   }
   
@@ -77,6 +77,26 @@ export class CeinturesLombairesComponent implements OnInit {
     changeAttentes($event){
     this.defaultSearch.attentesPersonnelles = this.attentesPersonnelles.indexOf($event.target.value) ;
     console.log(this.defaultSearch.projet);
+    }
+
+    select_default(my_option, all_options, dropdown_id){
+      var temp = "";
+      for(var i = 0; i < all_options.length; i++){
+        if(my_option == all_options[i]){
+          temp += "<option value='"+all_options[i]+"' selected>"+all_options[i]+"</option>";
+        }else{
+          temp += "<option value='"+all_options[i]+"'>"+all_options[i]+"</option>";
+        }
+      }
+      document.getElementById(dropdown_id).innerHTML = temp;
+    }
+
+    resetForm(){
+      this.select_default("", this.projets, "projet");
+      this.select_default("", this.symptomatologie, "symptomatologie");
+      this.select_default("", this.morphologies, "morphologie");
+      this.select_default("", this.activites, "activite");
+      this.select_default("", this.attentesPersonnelles, "attente");
     }
 }
 

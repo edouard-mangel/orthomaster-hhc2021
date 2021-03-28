@@ -12,3 +12,7 @@
 tr th,tr td {
     text-align: center;
 }
+
+.buttons button{
+    margin: 20px;
+}
