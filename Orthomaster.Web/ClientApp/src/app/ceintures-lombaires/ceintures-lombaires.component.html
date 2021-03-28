@@ -1,10 +1,37 @@
-<p>Ceintures lombaires</p>
+<h1>Ceintures lombaires</h1>
 
-<div class="form-groupng">
-    <label for="projets">Projet</label>
-    <select class="form-control" id="projets" required>
+<div class="form-groupng lignequestionnaire d-flex flex-row">
+    <label class="col-sm-2" for="projets">Projet</label>
+    <select (change)="changeProjet($event)" class="form-control col-sm-10" id="projets" required>
       <option *ngFor="let proj of projets" [value]="proj">{{proj}}</option>
     </select>
-  </div>
+</div>
 
-  <button (click)="fetchData();" class="btn btn-primary">Rechercher</button>
+<div class="form-groupng lignequestionnaire d-flex flex-row">
+    <label class="col-sm-2" for="symptomatologie" >Symptomatologie </label>
+    <select (change)="changeSymptomatologie($event)" class="form-control col-sm-10 " id="symptomatologie" required>
+      <option *ngFor="let proj of symptomatologie" [value]="proj">{{proj}}</option>
+    </select>
+  </div>
+  <div class="form-groupng lignequestionnaire d-flex flex-row questionnaire">
+      <label class="col-sm-2" for="projets">Morphologie</label>
+      <select (change)="changeMorphologie($event)" class="form-control col-sm-10 " id="projets" required>
+        <option *ngFor="let proj of morphologies" [value]="proj">{{proj}}</option>
+      </select>
+    </div>
+    <div class="form-groupng lignequestionnaire d-flex flex-row">
+        <label class="col-sm-2" for="projets">Activite</label>
+        <select (change)="changeActivite($event)" class="form-control col-sm-10 " id="projets" required>
+          <option *ngFor="let proj of activites" [value]="proj">{{proj}}</option>
+        </select>
+      </div>
+      <div class="form-groupng lignequestionnaire d-flex flex-row">
+          <label class="col-sm-2" for="projets">Attentes Personnelles</label>
+          <select (change)="changeAttentes($event)" class="form-control col-sm-10 " id="projets" required>
+            <option *ngFor="let proj of attentesPersonnelles" [value]="proj">{{proj}}</option>
+          </select>
+        </div>
+
+<div class="text-center">
+    <button (click)="fetchData();" class="btn btn-primary align-center">Lancer la Recherche</button>
+</div>

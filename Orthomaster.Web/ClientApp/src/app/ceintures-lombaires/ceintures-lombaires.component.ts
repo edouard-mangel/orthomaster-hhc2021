@@ -8,15 +8,19 @@ import { HttpClient } from '@angular/common/http';
 })
 
 export class CeinturesLombairesComponent implements OnInit {
-  projets = ['Antalgie',   'Protéger le mouvement',  'Éviter une récidive',  
+  projets = ['', 'Antalgie',   'Protéger le mouvement',  'Éviter une récidive',  
             'Retrouver le mouvement', 'Restaurer un tonus musculaire'];
 
-  symptomatologie = ['douleur irradiante dans la jambe',
-  'blocage musculaire',
-  'périodes de crise',
-  'raideur matinale',
-  'grossesse'];
-  
+  symptomatologie = ['','Douleur irradiante dans la jambe', 'Blocage musculaire', 'Périodes de crise',
+                      'Raideur matinale', 'Grossesse'];
+
+  attentesPersonnelles= ['', 'Souplesse ','Légèreté', 'Facilité de mise en place', 'Maintien fort',
+    'Douceur du tissu', 'Discretion', 'Résistance/durabilité', 'Choix de coloris'];
+
+    morphologies= ['', 'Poitrine généreuse', 'Taille de guêpe', 'Ventre bedonnant', 'Hanches larges', 'Hyperlordose', 'Délordose', 'Grosses cuisses' ]
+    activites= ['', 'Sédentaire', 'Actif / tonique', 'Assis longtemps', 'Activité de force', 'Grande mobilité', 'Transpiration' ]
+
+
   private defaultSearch : SearchInfoDTO;  
 
   private webClient: HttpClient ;
@@ -44,11 +48,33 @@ export class CeinturesLombairesComponent implements OnInit {
   
   ngOnInit() {
   }
+  
+  changeProjet($event){
+    this.defaultSearch.projet = this.projets.indexOf($event.target.value);
+    console.log(this.defaultSearch.projet);
+    }
+    
+    changeSymptomatologie($event){
+    this.defaultSearch.symptomatologie = this.symptomatologie.indexOf($event.target.value);
+    console.log(this.defaultSearch.projet);
+    }
+    
+    changeMorphologie($event){
+    this.defaultSearch.morphologie = this.morphologies.indexOf($event.target.value) ;
+    console.log(this.defaultSearch.projet);
+    }
+    
+    changeActivite($event){
+    this.defaultSearch.activite = this.activites.indexOf($event.target.value) ;
+    console.log(this.defaultSearch.projet);
+    }
+    
+    changeAttentes($event){
+    this.defaultSearch.attentesPersonnelles = this.attentesPersonnelles.indexOf($event.target.value) ;
+    console.log(this.defaultSearch.projet);
+    }
 }
 
-interface ProjetQueryDTO{
-  projet :number
-}
 
 interface Term {
   interest: number;
