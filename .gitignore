@@ -502,3 +502,6 @@ testem.log
 /e2e/*.js
 /e2e/*.map
 .vs/orthomaster/v16/.suo
+.vs/orthomaster/v16/.suo
+.vs/orthomaster/v16/.suo
+.vs/orthomaster/v16/TestStore/0/000.testlog

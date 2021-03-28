@@ -9,7 +9,6 @@ namespace Infrastructure.Models
     {
         public Produit()
         {
-            CeintureLombaires = new HashSet<CeintureLombaire>();
             ProduitActivites = new HashSet<ProduitActivite>();
             ProduitAttentesPersonnelles = new HashSet<ProduitAttentesPersonnelle>();
             ProduitMorphologies = new HashSet<ProduitMorphologie>();
@@ -21,7 +20,6 @@ namespace Infrastructure.Models
         public string Nom { get; set; }
         public string Fabricant { get; set; }
 
-        public virtual ICollection<CeintureLombaire> CeintureLombaires { get; set; }
         public virtual ICollection<ProduitActivite> ProduitActivites { get; set; }
         public virtual ICollection<ProduitAttentesPersonnelle> ProduitAttentesPersonnelles { get; set; }
         public virtual ICollection<ProduitMorphologie> ProduitMorphologies { get; set; }

@@ -10,5 +10,6 @@
         public int Mesure { get; set; }
         public int Activite { get; set; }
         public int AttentesPersonnelles { get; set; }
+        public int Compteur { get; set; }
     }
 }

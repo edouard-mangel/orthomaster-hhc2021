@@ -3,11 +3,12 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace IntegrationTests
 {
     [TestClass]
-    public class UnitTest1
+    public class Tests
     {
         [TestMethod]
-        public void TestMethod1()
+        public void TestMethod()
         {
+
         }
     }
 }

@@ -1,21 +1,16 @@
-﻿using System;
+﻿using Infrastructure.Models;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Metadata;
 
 #nullable disable
 
-namespace Infrastructure.Models
+namespace Infrastructure
 {
-    public partial class SqlDbContext : Microsoft.EntityFrameworkCore.DbContext
+    public partial class SqlDbContext : DbContext
     {
-        public SqlDbContext()
-        {
-        }
+        public SqlDbContext() { }
 
         public SqlDbContext(DbContextOptions<SqlDbContext> options)
-            : base(options)
-        {
-        }
+            : base(options) { }
 
         public virtual DbSet<Activite> Activites { get; set; }
         public virtual DbSet<AttentesPersonnelle> AttentesPersonnelles { get; set; }
@@ -76,11 +71,6 @@ namespace Infrastructure.Models
 
                 entity.Property(e => e.Taille).HasMaxLength(255);
 
-                entity.HasOne(d => d.IdProduitNavigation)
-                    .WithMany(p => p.CeintureLombaires)
-                    .HasForeignKey(d => d.IdProduit)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("fk_CeintureLombaire_IdProduit_Produit_Id");
             });
 
             modelBuilder.Entity<Log>(entity =>

@@ -1,13 +1,11 @@
 <h1>Ceintures lombaires</h1>
-
-<div class="form-groupng lignequestionnaire d-flex flex-row">
-    <label class="col-sm-2" for="projets">Projet</label>
-    <select (change)="changeProjet($event)" class="form-control col-sm-10" id="projets" required>
-      <option *ngFor="let proj of projets" [value]="proj">{{proj}}</option>
-    </select>
-</div>
-
-<div class="form-groupng lignequestionnaire d-flex flex-row">
+    <div class="form-groupng lignequestionnaire d-flex flex-row">
+        <label class="col-sm-2" for="projets">Projet</label>
+        <select (change)="changeProjet($event)" class="form-control col-sm-10" id="projets" required>
+        <option *ngFor="let proj of projets" [value]="proj">{{proj}}</option>
+        </select>
+    </div>
+    <div class="form-groupng lignequestionnaire d-flex flex-row">
     <label class="col-sm-2" for="symptomatologie" >Symptomatologie </label>
     <select (change)="changeSymptomatologie($event)" class="form-control col-sm-10 " id="symptomatologie" required>
       <option *ngFor="let proj of symptomatologie" [value]="proj">{{proj}}</option>
@@ -20,18 +18,45 @@
       </select>
     </div>
     <div class="form-groupng lignequestionnaire d-flex flex-row">
-        <label class="col-sm-2" for="projets">Activite</label>
-        <select (change)="changeActivite($event)" class="form-control col-sm-10 " id="projets" required>
-          <option *ngFor="let proj of activites" [value]="proj">{{proj}}</option>
-        </select>
-      </div>
+    <label class="col-sm-2" for="projets">Activite</label>
+    <select (change)="changeActivite($event)" class="form-control col-sm-10 " id="projets" required>
+        <option *ngFor="let proj of activites" [value]="proj">{{proj}}</option>
+    </select>
+    </div>
       <div class="form-groupng lignequestionnaire d-flex flex-row">
-          <label class="col-sm-2" for="projets">Attentes Personnelles</label>
-          <select (change)="changeAttentes($event)" class="form-control col-sm-10 " id="projets" required>
-            <option *ngFor="let proj of attentesPersonnelles" [value]="proj">{{proj}}</option>
-          </select>
-        </div>
+        <label class="col-sm-2" for="projets">Attentes Personnelles</label>
+        <select (change)="changeAttentes($event)" class="form-control col-sm-10 " id="projets" required>
+        <option *ngFor="let proj of attentesPersonnelles" [value]="proj">{{proj}}</option>
+        </select>
+    </div>
 
 <div class="text-center">
     <button (click)="fetchData();" class="btn btn-primary align-center">Lancer la Recherche</button>
 </div>
+
+<br/>
+<br/>
+
+<table class='table table-striped' aria-labelledby="tableLabel" *ngIf="ceintures">
+    <thead>
+      <tr>
+        <th>Numero</th>
+        <th>Photo</th>
+        <th>Nom</th>
+        <th>Fabricant</th>
+        <th>Référence</th>
+        <th>Couleur</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let ceinture of ceintures" class="ceintureRow ">
+        <td>{{ceinture. numero}}</td>
+        <td><img class="imgTab" src={{ceinture.imgURL}}/></td>
+        <td>{{ceinture.nom}}</td>
+        <td>{{ceinture.nomFabricant}}</td>
+        <td>{{ceinture.reference}}</td>
+        <td>{{ceinture.couleur}}</td>  
+      </tr>
+    </tbody>
+  </table>
+  

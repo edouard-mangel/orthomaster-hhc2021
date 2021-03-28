@@ -22,7 +22,10 @@ export class CeinturesLombairesComponent implements OnInit {
 
 
   private defaultSearch : SearchInfoDTO;  
+  private ceintures : Ceinture[];
+  public currentCount = 0;
 
+ 
   private webClient: HttpClient ;
   private baseUrl: string;
   constructor(http: HttpClient, @Inject('BASE_URL') baseUrl: string) {
@@ -36,14 +39,16 @@ export class CeinturesLombairesComponent implements OnInit {
       mesure: 1,
       activite: 1,
       taillePatient: 1,
-      attentesPersonnelles: 1
+      attentesPersonnelles: 1,
+      compteur: 1
      };
   }
 
   fetchData()  {
-    this.webClient.post<Term[]>(this.baseUrl + 'ceintureslombaires/search', this.defaultSearch ).subscribe(result => {
-
+    this.webClient.post<Ceinture[]>(this.baseUrl + 'ceintureslombaires/search', this.defaultSearch ).subscribe(result => {
+      this.ceintures = result;
     }, error => console.error(error));
+    this.defaultSearch.compteur++;
   }  
   
   ngOnInit() {
@@ -76,11 +81,13 @@ export class CeinturesLombairesComponent implements OnInit {
 }
 
 
-interface Term {
-  interest: number;
-  totalAmount: number;
-  amortizedCapital: number;
-  remainingCapital: number;
+interface Ceinture {
+  numero: number;
+  imgURL: string;
+  nom: string;
+  nomFabricant: string;
+  reference: string;
+  couleur: string;
 }
 
 interface SearchInfoDTO {
@@ -92,4 +99,5 @@ interface SearchInfoDTO {
   activite: number;
   taillePatient: number;
   attentesPersonnelles: number;
+  compteur:number;
 }

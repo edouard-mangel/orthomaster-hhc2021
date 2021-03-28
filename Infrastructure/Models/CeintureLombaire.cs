@@ -14,6 +14,6 @@ namespace Infrastructure.Models
         public decimal? HauteurVentrale { get; set; }
         public bool? CompatiblePetiteTaille { get; set; }
 
-        public virtual Produit IdProduitNavigation { get; set; }
+        public virtual Produit Produit { get; set; }
     }
 }
